@@ -1,0 +1,81 @@
+/* Reset & Base */
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe4e1, #e0f7fa);
+  color: #333;
+  min-height:100vh;
+}
+header { text-align:center; padding:20px; }
+header h1 { font-size:2rem; color:#e53935; }
+
+/* Botones */
+.btn-primary, .btn-danger {
+  padding:10px 16px; border:none; border-radius:6px; cursor:pointer;
+}
+.btn-primary { background:#e53935; color:#fff; }
+.btn-danger  { background:#999;    color:#fff; }
+
+/* Navegación de Mes */
+.nav-month { display:flex; justify-content:space-between; align-items:center; max-width:900px; margin:0 auto; padding:0 10px; }
+.nav-month button { background:none; border:none; font-size:1.2rem; cursor:pointer; }
+
+/* Calendario */
+.calendar { display:grid; grid-template-columns:repeat(7,1fr); gap:5px; max-width:900px; margin:10px auto; }
+.calendar .weekday, .calendar .day {
+  border:1px solid #ccc; padding:10px; min-height:80px; background:#fff; position:relative; cursor:pointer;
+}
+.weekday { background:#f0f0f0; text-align:center; font-weight:bold; }
+.day .number { position:absolute; top:5px; right:5px; font-weight:bold; }
+
+/* Evento: emoji preservativo/fuego */
+.event {
+  display:block; margin-top:20px; font-size:1.4rem; pointer-events:none;
+}
+
+/* Corazón indicador */
+.day-heart { position:absolute; bottom:5px; left:5px; font-size:1rem; pointer-events:none; }
+
+/* Campos extras ocultos */
+.extra-field { display:none; margin-top:8px; }
+
+/* Modal */
+.modal {
+  display:none; position:fixed; top:0; left:0; right:0; bottom:0;
+  background:rgba(0,0,0,0.5); justify-content:center; align-items:center;
+  padding:20px; overflow:auto;
+}
+.modal-content {
+  background:#fff; border-radius:8px; width:100%; max-width:450px; max-height:90vh;
+  padding:20px; overflow-y:auto;
+}
+.modal-content h2 { margin-bottom:10px; color:#e53935; }
+.modal-content label { display:block; margin:10px 0; font-size:.95rem; }
+.modal-content input, .modal-content select, .modal-content textarea {
+  width:100%; padding:8px; margin-top:4px; border:1px solid #ccc; border-radius:4px;
+}
+.split-inputs { display:flex; gap:10px; flex-wrap:wrap; }
+.modal-actions { margin-top:15px; display:flex; justify-content:flex-end; gap:10px; }
+
+@media (max-width: 480px) {
+  .split-inputs {
+    flex-direction: column;
+  }
+  .btn-primary {
+    width: 100%;
+  }
+  .calendar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+  .calendar .day,
+  .calendar .weekday {
+    padding: 6px;
+    min-height: 60px;
+  }
+  .modal-content {
+    max-width: 95%;
+    padding: 15px;
+  }
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calendario de Nosotros</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="beso.jpg" alt="Nuestra Foto" id="header-photo">
+    <h1> LuSan - <span id="year-display">2026</span></h1>
+  </header>
+  <main>
+    <div class="nav-month">
+      <button id="prev-month">◀</button>
+      <h2 id="month-display"></h2>
+      <button id="next-month">▶</button>
+    </div>
+    <div class="calendar" id="calendar-grid">
+      <!-- Weekday headers en español -->
+      <div class="weekday">Sunday</div>
+      <div class="weekday">Monday</div>
+      <div class="weekday">Tuesday</div>
+      <div class="weekday">Wednesday</div>
+      <div class="weekday">Thursday</div>
+      <div class="weekday">Friday</div>
+      <div class="weekday">Saturday</div>
+    </div>
+
+    <div class="legend">
+        <div class="item"><span class="heart">🩷</span> Sobre Nosotros</div> <br>
+        <div class="item"><span class="heart">❤</span>  Sobre cosas que nos gustan como pareja/personales</div> <br>
+        <div class="item"><span class="heart">🧡</span> Fechas importantes</div> <br>
+        <div class="item"><span class="heart">💛</span> Turnos medicos, psicologicos, anses, etc</div> <br>
+        <div class="item"><span class="heart">💚</span> Compras para la casa</div> <br>
+        <div class="item"><span class="heart">🩵</span> Cosas para hacer juntos</div> <br>
+        <div class="item"><span class="heart">💙</span> Recuerdos, frases o cosas lindas que nos dijimos</div> <br>
+        <div class="item"><span class="heart">💜</span> Música/Pelis</div> <br>
+        <div class="item"><span class="heart">🖤</span> Problemas que queremos resolver juntos, temas delicados para hablar con amor</div> <br>
+        <div class="item"><span class="heart">🩶</span> Compras compartidas</div> <br>
+        <div class="item"><span class="heart">🤍</span> Agradecimientos o cosas que amamos del otro</div> <br>
+        <div class="item"><span class="heart">🤎</span> Recetas, comidas favoritas, pedidos especiales, ideas para cocinar juntos</div> <br>
+        <div class="item"><span class="heart">💠</span> Otros</div> <br>
+    </div>
+
+    <!-- Modal para añadir/editar evento -->
+    <div class="modal" id="event-modal">
+      <div class="modal-content">
+        <h2 id="modal-title">Añadir Evento</h2>
+        <label for="evt-recurring">Repetir:</label>
+        <select id="evt-recurring">
+        <option value="none">Nunca</option>
+        <option value="daily">Cada día</option>
+        <option value="weekly">Cada semana</option>
+        <option value="monthly">Cada mes</option>
+        <option value="yearly">Cada año</option>
+        </select>
+        <form id="event-form">
+          <label for="evt-date">Fecha:</label>
+          <input type="date" id="evt-date" required>
+
+          <label for="evt-title">¿De qué es?</label>
+          <input type="text" id="evt-title" placeholder="Descripción" required>
+
+          <label for="evt-cat">Categoría:</label>
+          <select id="evt-cat" required>
+            <option value="cat-sobre">🩷 Sobre Nosotros</option>
+            <option value="cat-gustos">❤ Gustos</option>
+            <option value="cat-fechas">🧡 Fechas importantes</option>
+            <option value="cat-medicos">💛 Médicos</option>
+            <option value="cat-casa">💚 Casa</option>
+            <option value="cat-juntos">🩵 Juntos</option>
+            <option value="cat-recuerdos">💙 Recuerdos</option>
+            <option value="cat-musica">💜 Música/Pelis</option>
+            <option value="cat-problemas">🖤 Problemas</option>
+            <option value="cat-compras">🩶 Compras</option>
+            <option value="cat-agrade">🤍 Agradecimientos</option>
+            <option value="cat-recetas">🤎 Recetas</option>
+            <option value="cat-otros">💠 Otros</option>
+          </select>
+
+          <div class="modal-actions">
+            <button type="button" class="btn" id="cancel-btn">Cancelar</button>
+            <button type="button" class="btn btn-danger" id="delete-btn">Eliminar</button>
+            <button type="submit" class="btn btn-primary" id="save-btn">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

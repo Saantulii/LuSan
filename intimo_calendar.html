@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tracker Íntimo con Calendario</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emojione@4.5.0/assets/css/emojione.min.css"/>
+  <link rel="stylesheet" href="intimo_calendar.css">
+</head>
+<body>
+  <header>
+    <h1>🔥 Tracker Íntimo</h1>
+  </header>
+
+  <main>
+    <div class="nav-month">
+      <button id="prev-month">◀</button>
+      <h2 id="month-display"></h2>
+      <button id="next-month">▶</button>
+    </div>
+    <div class="calendar" id="calendar-grid">
+      <div class="weekday">Dom</div><div class="weekday">Lun</div><div class="weekday">Mar</div>
+      <div class="weekday">Mié</div><div class="weekday">Jue</div><div class="weekday">Vie</div><div class="weekday">Sáb</div>
+    </div>
+
+    <div class="modal" id="log-modal">
+      <div class="modal-content">
+        <h2 id="modal-title">Nuevo Registro Íntimo</h2>
+        <form id="log-form">
+          <!-- Identificador y fecha -->
+          <input type="hidden" id="evt-id" name="evt-id">
+          <input type="hidden" id="evt-date" name="evt-date">
+
+          <label>¿Usaron preservativo?
+            <select id="use-condom" name="use-condom" required>
+              <option value="">Selecciona…</option>
+              <option value="yes">✅ Sí</option>
+              <option value="no">❌ No</option>
+            </select>
+          </label>
+
+          <div id="no-condom-options" class="extra-field">
+            <label>¿Fue adentro o afuera?
+              <select id="no-condom-location" name="no-condom-location">
+                <option value="">Selecciona…</option>
+                <option value="inside">Adentro</option>
+                <option value="outside">Afuera</option>
+              </select>
+            </label>
+          </div>
+
+          <label>¿Cuántas veces hoy?
+            <input type="number" id="times-today" name="times-today" min="1" required>
+          </label>
+
+          <label>Orgasmos (♂️/♀️):
+            <div class="split-inputs">
+              <input type="number" id="male-orgasm" name="male-orgasm" min="0" placeholder="♂️">
+              <input type="number" id="female-orgasm" name="female-orgasm" min="0" placeholder="♀️">
+            </div>
+          </label>
+
+          <!-- 3 nuevos campos -->
+          <label>Uso de juguetes?
+            <select id="use-toys" name="use-toys">
+              <option value="no">🚫 No</option>
+              <option value="yes">🧸 Sí</option>
+            </select>
+          </label>
+          <label>Nivel de intimidad (1–5):
+            <input type="number" id="intimacy-level" name="intimacy-level" min="1" max="5" placeholder="1-5">
+          </label>
+          <label>Recuperación (min):
+            <input type="number" id="recovery-time" name="recovery-time" min="0" placeholder="Minutos">
+          </label>
+
+          <label>Comentarios/Notas:
+            <textarea id="notes" name="notes" rows="2"></textarea>
+          </label>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-danger" id="cancel-log">Cancelar</button>
+            <button type="submit" class="btn-primary" id="save-log">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="intimo_calendar.js"></script>
+</body>
+</html>
