@@ -182,3 +182,51 @@ main {
   background: #e53935;
   color: #fff;
 }
+
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  #calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3px;
+  }
+
+  .day,
+  .weekday {
+    font-size: 12px;
+    padding: 5px;
+    min-height: 60px;
+  }
+
+  #event-modal .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .form-row,
+  .form-row.split-inputs {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-row input[type="text"],
+  .form-row select,
+  .form-row input[type="date"],
+  .form-row input[type="number"] {
+    width: 100%;
+  }
+
+  #calendar-grid .event {
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  .emoji {
+    font-size: 18px;
+  }
+}
